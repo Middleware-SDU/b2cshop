@@ -1,0 +1,46 @@
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:applicationContext.xml</param-value>
+    </context-param>
+
+    <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- 配置session超时时间[min]-->
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+
+    <!-- 404[Not found] -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/index.jsp</location><!-- TODO : 这个页面需要处理一下 -->
+    </error-page>
+
+    <!-- 500[Server内部错误] -->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/index.jsp</location><!-- TODO : 这个页面需要处理一下 -->
+    </error-page>
+
+</web-app>
