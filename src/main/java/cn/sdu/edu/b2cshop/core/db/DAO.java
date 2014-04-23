@@ -5,13 +5,19 @@ import java.util.List;
 
 public interface DAO<T, ID extends Serializable> {
 
-    List<T> find(List<ID> idList);
-
     T find(ID id);
 
-    List<T> save(List<T> entityList);
+    Object update(T entity);
+
+    void save(T entity);
+
+    void save(List<T> entityList);
+
+    public void remove(T entity);
 
     void remove(List<T> entityList);
+
+    public void removeById(ID id);
 
     void removeByIds(List<ID> idList);
 

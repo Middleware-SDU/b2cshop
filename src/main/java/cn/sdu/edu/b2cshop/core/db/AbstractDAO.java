@@ -5,7 +5,15 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.springframework.transaction.annotation.Transactional;
+
+@Transactional
 public abstract class AbstractDAO<T, ID extends Serializable> implements DAO<T, ID> {
+
+    @PersistenceContext protected EntityManager em;
 
     protected Class<T> typeOfT;
     protected Class<ID> typeOfID;
@@ -22,32 +30,50 @@ public abstract class AbstractDAO<T, ID extends Serializable> implements DAO<T, 
     }
 
     @Override
+    @Transactional(readOnly=true)
     public T find(ID id) {
-        return null;
+        return em.find(typeOfT, id);
     }
 
     @Override
-    public List<T> find(List<ID> idList) {
-        // TODO Auto-generated method stub
-        return null;
+    public Object update(T entity) {
+        return em.merge(entity);
     }
 
     @Override
-    public List<T> save(List<T> entityList) {
-        // TODO Auto-generated method stub
-        return null;
+    public void save(T entity) {
+        em.persist(entity);
+    }
+
+    @Override
+    public void save(List<T> entityList) {
+        for(T t : entityList) {
+            save(t);
+        }
+    }
+
+    @Override
+    public void remove(T entity) {
+        remove(entity);
     }
 
     @Override
     public void remove(List<T> entityList) {
-        // TODO Auto-generated method stub
-        
+        for(T t : entityList) {
+            remove(t);
+        }
+    }
+
+    @Override
+    public void removeById(ID id) {
+        remove(em.getReference(typeOfT, id));
     }
 
     @Override
     public void removeByIds(List<ID> idList) {
-        // TODO Auto-generated method stub
-        
+        for(ID id : idList) {
+            removeById(id);
+        }
     }
 
 }
