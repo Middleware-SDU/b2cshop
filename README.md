@@ -1,4 +1,4 @@
-b2cshop
-=======
+This is your new Play application
+=====================================
 
-Planning and Design of ECS Course Design
+This file will be packaged with your application, when using `play dist`.

@@ -1,0 +1,23 @@
+@**
+ * Back Frame layout
+ *@
+ 
+ @(title: String)(content: Html)
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>@title</title>
+    <link href="@routes.Assets.at("stylesheets/back/frame.css")" rel="stylesheet" type="text/css">
+    <script language="javascript" src="@routes.Assets.at("javascripts/back/checkform.js")">
+</head>
+<body>
+    <div id="container">
+        @content
+        <div id="footer">
+            <span id="footerleft"> &nbsp;隐私权 | 版权 | 法律声明 | 电子邮件：admin@@163.com </span>
+            <span id="footerright"> B2C商城  Power by IBM &nbsp;</span>
+        </div>
+    </div>
+</body>
+</html>
