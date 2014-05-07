@@ -1,39 +1,6 @@
 @import helper._
 
-@views.html.layouts.frameLayout("B2C商城") {
-    <div id="globallink">
-        <ul>
-            <li><a href="home.html">首页</a></li>
-            <li><a href="credit_query.html">积分查询</a></li>
-            <li><a href="item_search.html">商品搜索</a></li>
-            <li><a href="favorite.html">收藏夹</a></li>
-            <li><a href="cart_list.html">我的购物车</a></li>
-            <li><a href="tradequery.html">交易查询</a></li>
-            <li><a href="send_notes.html">送货说明</a></li>
-            <li><a href="" class="nouseful">&nbsp;</a></li>
-        </ul>
-    </div>
-    <div id="banner"></div>
-    <div id="main">
-        <div id="search2">
-            <div id="searchleft">
-                <img src="@routes.Assets.at("images/web/ico_site.jpg")"  id="ico_site"/>
-                网站路径：<a href="home.html">首页</a>&gt;&gt;<a href="">新用户注册</strong></a>
-            </div>
-            <div id="searchright2">
-              <input type="text" name="product" id="textInput"/>
-              <input type="button" name="Submit" value="搜索" id="searchbutton" onClick="javascript:window.open('item_search_list.html','_parent','')">
-            </div>
-            <div id="searchright1">
-              <select name="category" id="searchrightcategory">
-                <option value="5">所有类别</option>
-                <option value="1">图书音像</option>
-                <option value="2">时尚生活</option>
-                <option value="3">饰品配件</option>
-                <option value="4">数码产品</option>
-              </select>
-          </div>
-        </div>
+@views.html.layouts.frameLayout("注册") {
         <div id="sendnote">
             <div id="sendnotehead"><strong>新用户注册</strong></div>
             <div id="sendnotecontent">
@@ -77,5 +44,4 @@
         }
             </div>
         </div>
-    </div>
 }

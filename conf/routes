@@ -15,5 +15,46 @@ GET     /logout                                @cn.edu.sdu.b2cshop.system.common
 # Auth
 GET     /users/:id/view                        @cn.edu.sdu.b2cshop.system.users.controllers.UserController.view(id:Long)
 
+# ware
+
+GET     /wares/search                          @cn.edu.sdu.b2cshop.system.wares.controllers.WareController.search()
+GET     /wares/:wareId                         @cn.edu.sdu.b2cshop.system.wares.controllers.WareController.view(wareId:Long)
+
+# ware-comment
+
+GET     /wares/:wareId/comments                @cn.edu.sdu.b2cshop.system.wares.controllers.WareCommentController.view(wareId:Long)
+GET     /wares/:wareId/add                     @cn.edu.sdu.b2cshop.system.wares.controllers.WareCommentController.add(wareId:Long)
+
+# ware-categories
+
+GET     /wares/categories/:id                  @cn.edu.sdu.b2cshop.system.wares.controllers.WareCategoryController.view(id:Long)
+
+# user
+
+# user-orders
+
+GET    /orders/:orderId                       @cn.edu.sdu.b2cshop.system.orders.controllers.OrderController.view(orderId:Long)
+
+# user-credits
+
+GET    /users/:userId/credits/:creditId        @cn.edu.sdu.b2cshop.system.orders.controllers.CreditController.view(userId:Long,creditId:Long)
+
+# user-favorites
+
+GET    /users/:userId/favorites                @cn.edu.sdu.b2cshop.system.users.controllers.FavoriteController.view(userId:Long)
+
+# user-carts
+
+GET    /users/:userId/carts                    @cn.edu.sdu.b2cshop.system.carts.controllers.CartController.view(userId:Long)
+
+# user-trades
+
+GET    /users/:userId/trades                   @cn.edu.sdu.b2cshop.system.carts.controllers.TradeController.view(userId:Long)
+GET    /users/:userId/carts/:cartId/check      @cn.edu.sdu.b2cshop.system.carts.controllers.TradeController.check(userId:Long,cartId:Long)
+
+# user-addresses
+
+GET    /users/:userId/addresses                @cn.edu.sdu.b2cshop.system.users.controllers.UserAddressController.view(userId:Long)
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

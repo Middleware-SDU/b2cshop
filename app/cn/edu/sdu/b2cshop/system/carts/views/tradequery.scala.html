@@ -1,0 +1,67 @@
+@views.html.layouts.mainLayout("交易查询") {
+<div id="sendnote">
+    <div id="sendnotehead">
+        <strong>历史交易查询</strong>
+    </div>
+    <div id="sendnotecontent">
+        <table id="tradequery">
+            <tr>
+                <th>请选择起始时间:&nbsp;</th>
+                <td><select name="year">
+                        <option>2007</option>
+                        <option>2006</option>
+                </select> &nbsp;年&nbsp; <select name="month">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                </select> &nbsp;月&nbsp; <select name="day">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                </select> &nbsp;日</td>
+            </tr>
+            <tr>
+                <th>请选择结束时间:&nbsp;</th>
+                <td><select name="year">
+                        <option>2007</option>
+                        <option>2006</option>
+                </select> &nbsp;年&nbsp; <select name="month">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                </select> &nbsp;月&nbsp; <select name="day">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                </select> &nbsp;日</td>
+            </tr>
+            <tr>
+                <th>请选择订单状态:&nbsp;</th>
+                <td><select name="pay">
+                        <option>已支付</option>
+                        <option>未支付</option>
+                </select></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type="Button" class="" name="button2" value="查询"
+                    onClick="javascript:window.location.href='order_list.html'">
+                <td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+}

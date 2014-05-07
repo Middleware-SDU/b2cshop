@@ -40,9 +40,11 @@ public abstract class BaseController extends Controller {
                 public void invoke() {
                     // put the logged user into HTTP context
                     User loggedUser = User.dao.findByUsername(ctx.session().get("username"));
-                    ContextHelper.setLoggedUser(loggedUser);
-                    JPA.em().merge(loggedUser);
-                    Logger.debug("  Current logged user is " + loggedUser.getUsername() + "(" + loggedUser.getId() + ")");
+                    if(loggedUser != null){
+                        ContextHelper.setLoggedUser(loggedUser);
+                        JPA.em().merge(loggedUser);
+                        Logger.debug("  Current logged user is " + loggedUser.getUsername() + "(" + loggedUser.getId() + ")");
+                    }
                 }
             });
             return delegate.call(ctx);
