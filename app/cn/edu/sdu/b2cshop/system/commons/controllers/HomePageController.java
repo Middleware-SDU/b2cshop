@@ -2,7 +2,6 @@ package cn.edu.sdu.b2cshop.system.commons.controllers;
 
 
 import play.Logger;
-import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.web.home_nologin;
 

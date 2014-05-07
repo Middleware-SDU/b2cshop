@@ -1,0 +1,51 @@
+@views.html.layouts.frameLayout("B2C商城") {
+<div id="sendnote">
+    <div id="sendnotehead">
+        <strong>商品信息</strong>
+    </div>
+    <div id="sendnotecontent">
+        <table id="creditquery">
+            <caption>大学物理学.第四册：波动与光学（第2版）</caption>
+            <tbody>
+                <tr>
+                    <td><img src="@routes.Assets.at("images/web/dxwl4.jpg")" alt="大学物理第四册" class="picture1"></td>
+                    <td colspan="4" class="tdleftalign">本书是清华大学教材《大学物理学》的第四册，讲述振动与波的一般基本规律和波动光学的基本原理，包括光的干涉、衍射和偏振。除了基本内容外，还专题介绍了全息照相、光学信息处理、液晶等今日物理趣闻和著名物理学家托马斯·杨和菲涅耳的传略。基本内容扼要，附加内容通俗易懂。本书可作为高等院校的大学物理教材，也可以作为中学物理教师教学或其他读者自学的参考书。</td>
+                </tr>
+                <tr>
+                    <td>市场价：￥10.00</td>
+                    <td>会员价：￥8.50</td>
+                    <td>节省：￥1.50</td>
+                    <td>库存量：20</td>
+                    <td>用户评分：<img src="@routes.Assets.at("images/web/4star.JPG")" alt="喜欢" class="picture"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a
+                        href="@cn.edu.sdu.b2cshop.system.wares.controllers.routes.WareCommentController.view(1)">【查看用户评论】</a><br>
+                        <a
+                        href="@cn.edu.sdu.b2cshop.system.wares.controllers.routes.WareCommentController.add(1)">【参与评论】</a>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><a
+                        href="@cn.edu.sdu.b2cshop.system.carts.controllers.routes.CartController.view(1)"><img
+                            src="@routes.Assets.at(" images/web/goumai.gif")" alt="购买"
+                            class="picture"></a>&nbsp; <a
+                        href="@cn.edu.sdu.b2cshop.system.users.controllers.routes.FavoriteController.view(1)"><img
+                            src="@routes.Assets.at("images/web/put_to_collection.gif")" alt="收藏" class="picture"></a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+}

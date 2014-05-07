@@ -1,0 +1,47 @@
+@views.html.layouts.mainLayout("收藏夹") {
+<div id="sendnote">
+    <div id="sendnotehead">
+        <strong>我的收藏夹</strong>
+    </div>
+    <div id="sendnotecontent">
+        <table id="favorite">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>商品名</th>
+                    <th>图片</th>
+                    <th>市场价</th>
+                    <th>会员价</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><a href="item_info.html"><span>大学物理学.第四册：波动与光学（第2版）</span></a>
+                    </td>
+                    <td><img src="../image/dxwl4.jpg" /></td>
+                    <td>￥10.00</td>
+                    <td>￥8.50</td>
+                    <td><a href="cart_list.html"><img
+                            src="../image/put_to_cart.gif" class="picture" /></a>&nbsp;<a
+                        href="#" onClick="window.confirm('确定删除？')"><img
+                            src="../image/delete_item.gif" class="picture" /></a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><a href="item_info_nostorage.html"><span>大学物理学.第二册：热学（第2版）</span></a>
+                    </td>
+                    <td><img src="../image/dxwl2.jpg" /></td>
+                    <td>￥9.50</td>
+                    <td>￥8.08</td>
+                    <td><a href="cart_list.html"><img
+                            src="../image/put_to_cart.gif" class="picture" /></a>&nbsp;<a
+                        href="#" onClick="window.confirm('确定删除？')"><img
+                            src="../image/delete_item.gif" class="picture" /></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+}

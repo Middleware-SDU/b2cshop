@@ -1,0 +1,39 @@
+@views.html.layouts.frameLayout("B2C商城") {
+<div id="sendnote">
+    <div id="sendnotehead">
+        <strong>添加评论</strong>
+    </div>
+    <div id="sendnotecontent">
+        <form action="" method="post" enctype="multipart/form-data"
+            name="form1">
+            <table id="commenttable">
+                <tr>
+                    <th>打分：</th>
+                    <td><input type="radio" name="radiobutton" value="radiobutton"></td>
+                    <td><img src="@routes.Assets.at("images/web/1star.JPG")" alt="1星">很不喜欢</td>
+                    <td><input type="radio" name="radiobutton" value="radiobutton"></td>
+                    <td><img src="@routes.Assets.at("images/web/2star.JPG")">不喜欢</td>
+                    <td><input type="radio" name="radiobutton" value="radiobutton"></td>
+                    <td><img src="@routes.Assets.at("images/web/3star.JPG")" alt="3星">一般</td>
+                    <td><input type="radio" name="radiobutton" value="radiobutton"></td>
+                    <td><img src="@routes.Assets.at("images/web/4star.JPG")" alt="4星">喜欢</td>
+                    <td><input type="radio" name="radiobutton" value="radiobutton"></td>
+                    <td><img src="@routes.Assets.at("images/web/5star.JPG")" alt="5星">很喜欢</td>
+                </tr>
+                <tr>
+                    <th>评论：</th>
+                    <td colspan="10"><textarea name="webUserEntity.desc"
+                            class="textAreaStyle"></textarea></td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                    <td colspan="10"><input type="Button" class="bt2"
+                        name="button2" value="提交" onClick="checkcommentform()">
+                        &nbsp;<input type="Reset" class="bt2" 　name="button1" value="重填"
+                        onClick="clear()"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+}

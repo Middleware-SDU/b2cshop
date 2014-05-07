@@ -1,0 +1,36 @@
+@views.html.layouts.mainLayout("积分查询") {
+<div id="sendnote">
+    <div id="sendnotehead">
+        <strong>当前积分：10</strong>
+    </div>
+    <div id="sendnotecontent">
+        <table id="creditquery">
+            <caption>积分明细</caption>
+            <thead>
+                <tr>
+                    <th>订单号</th>
+                    <th>下单时间</th>
+                    <th>订单金额</th>
+                    <th>获得积分</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a
+                        href="@cn.edu.sdu.b2cshop.system.orders.controllers.routes.OrderController.view(1)">1483728</a>
+                    </td>
+                    <td>2007-10-01 10:25:04</td>
+                    <td>￥30.18</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td><a href="#">1483729</a></td>
+                    <td>2007-10-12 16:02:24</td>
+                    <td>￥70.00</td>
+                    <td>70</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+}
