@@ -6,7 +6,10 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+
 import cn.edu.sdu.b2cshop.system.commons.BaseModel;
+import cn.edu.sdu.b2cshop.system.users.daos.UserDAO;
+import cn.edu.sdu.b2cshop.system.users.daos.impls.UserDAOImpl;
 
 @Entity
 public class User extends BaseModel {
@@ -22,13 +25,28 @@ public class User extends BaseModel {
     @Column(length=10, nullable=false)
     private String realname;
 
+    @Column(nullable=false)
+    private boolean admin;
+
     @OneToMany(mappedBy = "user", cascade = { CascadeType.REMOVE }, targetEntity = UserAddress.class)
     private List<UserAddress> addresses = new ArrayList<UserAddress>();
+
+    /**
+     * Generic DAO for User model
+     */
+    public static UserDAO dao = new UserDAOImpl();
 
     public User() {}
 
     public User(String username) {
         this.username = username;
+        this.admin = false;
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.admin = false;
     }
 
     public String getUsername() {
@@ -61,6 +79,14 @@ public class User extends BaseModel {
 
     public void setAddresses(List<UserAddress> addresses) {
         this.addresses = addresses;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     /**

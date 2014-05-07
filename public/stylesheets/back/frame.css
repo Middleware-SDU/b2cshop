@@ -2,7 +2,7 @@ body{
     font-family: "Arial", "Helvetica", "sans-serif";
     font-size: 12px;
     text-align: center;
-    background:transparent url(../image/bg-index.jpg) repeat-x scroll center top;
+    background:transparent url(../../images/back/bg-index.jpg) repeat-x scroll center top;
 }
 #container{
     position:relative;
@@ -18,12 +18,12 @@ body{
     margin:0px,auto;
     height:52px;
     border:none;
-    background-image:url(../image/whole8.jpg);
+    background-image:url(../../images/back/whole8.jpg);
 }
 
 
 #logalleft{
-    background-image:url(../image/logal8.gif);
+    background-image:url(../../images/back/logal8.gif);
     width:800px;
     height:45px;
 }
@@ -86,12 +86,12 @@ body{
 #globallink a{
     display:block;
     padding:5px 6px 8px 6px;
-    background:url(../image/navigation-menu.png) no-repeat;
+    background:url(../../images/back/navigation-menu.png) no-repeat;
     margin:0px;
 }
 #current{
     color:#FFFFFF;
-    background:url(../image/button.jpg) no-repeat;
+    background:url(../../images/back/button.jpg) no-repeat;
 }
 
 #globallink a:link, #globallink a:visited{
@@ -101,17 +101,17 @@ body{
 #globallink a:hover{
     color:#FFFFFF;
     text-decoration:none;
-    background:url(../image/button.jpg) no-repeat;
+    background:url(../../images/back/button.jpg) no-repeat;
     /* 替换背景图片 */
 }
 #globallink .nouseful:hover{
     color:#FFFFFF;
     text-decoration:none;
-    background:url(../image/navigation-menu.png) no-repeat;
+    background:url(../../images/back/navigation-menu.png) no-repeat;
 }
 
 #category{
-    background:url(../image/category.jpg) no-repeat;
+    background:url(../../images/back/category.jpg) no-repeat;
     padding:55px 0px 40px 0px;
 }
 #category h4{
@@ -128,7 +128,7 @@ body{
 #category ul li{
     padding:2px 0px 2px 16px;
     border-bottom:1px dashed #999999;
-    background:url(../image/icon1.gif) no-repeat 5px 7px;
+    background:url(../../images/back/icon1.gif) no-repeat 5px 7px;
 }
 
 strong{

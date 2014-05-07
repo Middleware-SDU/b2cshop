@@ -3,7 +3,17 @@
 # ~~~~
 
 # Home page
-GET     /                           @cn.edu.sdu.b2cshop.system.commons.controllers.HomePageController.index()
+GET     /                                      @cn.edu.sdu.b2cshop.system.commons.controllers.HomePageController.index()
+
+# Auth
+GET     /registerUI                            @cn.edu.sdu.b2cshop.system.commons.controllers.AuthController.registerUI()
+GET     /loginUI                               @cn.edu.sdu.b2cshop.system.commons.controllers.AuthController.loginUI()
+POST    /register                              @cn.edu.sdu.b2cshop.system.commons.controllers.AuthController.register()
+POST    /login                                 @cn.edu.sdu.b2cshop.system.commons.controllers.AuthController.login()
+GET     /logout                                @cn.edu.sdu.b2cshop.system.commons.controllers.AuthController.logout()
+
+# Auth
+GET     /users/:id/view                        @cn.edu.sdu.b2cshop.system.users.controllers.UserController.view(id:Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

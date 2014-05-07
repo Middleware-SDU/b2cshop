@@ -2,12 +2,12 @@
     <div id="logalleft">
         <div id="logalright">
         <a href="" target="_parent">管理员 已登录|</a>
-        <a href="home.html" target="_parent">退出</a>
+        <a href="@cn.edu.sdu.b2cshop.system.commons.controllers.routes.AuthController.logout()" target="_parent">退出</a>
         </div>
     </div>
     <div id="globallink">
         <ul>
-            <li><a href="home.html">首页</a></li>
+            <li><a href="@cn.edu.sdu.b2cshop.system.commons.controllers.routes.HomePageController.index">首页</a></li>
             <li><a href="category_list.html">商品管理</a></li>
             <li><a href="order_admin.html">订单管理</a></li>
             <li><a href="salesdata_admin.html">销售量统计</a></li>
@@ -21,7 +21,7 @@
     <div id="main">
         <div id="search2">
             <div id="searchleft">
-                <img src="../image/ico_site.jpg"  id="ico_site"/>
+                <img src="@routes.Assets.at("images/back/ico_site.jpg")"  id="ico_site"/>
                 网站路径：<a href="home.html">首页</a>&gt;&gt;<a href=""> 商品管理</a>
             </div>
         </div>
@@ -34,39 +34,39 @@
             <td align="right" class="inputHeader"><label>
           <input type="checkbox" name="category1" value="tsyx">
           </label></td>
-          <td align="left" class="inputHeader"><img src="../image/plus.gif"></td>
+          <td align="left" class="inputHeader"><img src="@routes.Assets.at("images/back/plus.gif")"></td>
           <td width="94%"  class="inputHeader"><a href="javascript:show('t0',8)" class="menuLink">图书音像</a></td>
           </tr>
         <tr id="t0" style="display:none">
           <td colspan="3"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="inputTable">
               <tr>
                 <td width="4%" align="right" class="inputContent"><input type="checkbox" name="category1" value="jc"></td>
-                <td width="4%" align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td width="4%" align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td width="92%" class="inputContent"><a href="item_list.html" class="menuLink" >教材</a></td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category1" value="wy"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td colspan="2" class="inputContent">外语</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category1" value="gwyks"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td colspan="2" class="inputContent">公务员考试</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category1" value="ky"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td colspan="2" class="inputContent">考研</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category1" value="ys"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td colspan="2" class="inputContent">影视</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category1" value="yy"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td colspan="2" class="inputContent">音乐</td>
               </tr>
           </table></td>
@@ -75,29 +75,29 @@
           <td width="4%" align="right" class="inputHeader"><label>
           <input type="checkbox" name="category2" value="sssh" >
           </label></td>
-          <td width="2%" align="left" class="inputHeader"><img src="../image/plus.gif"></td>
+          <td width="2%" align="left" class="inputHeader"><img src="@routes.Assets.at("images/back/plus.gif")"></td>
           <td align="left" class="inputHeader"><a href="javascript:show('t1',8)" class="menuLink">时尚生活</a></td>
           </tr>
         <tr id="t1" style="display:none">
           <td colspan="3"><table class="inputTable" border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td width="4%" align="right" class="inputContent"><input type="checkbox" name="category2" value="hf"></td>
-                <td width="4%" align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td width="4%" align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">护肤</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category2" value="sh"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">首饰</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category2" value="fz"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">服装</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category2" value="xb"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent" width="92%">箱包</td>
               </tr>
           </table></td>
@@ -106,34 +106,34 @@
           <td align="right" class="inputHeader"><label>
           <input type="checkbox" name="category3" value="smcp">
           </label></td>
-          <td align="left" class="inputHeader"><img src="../image/plus.gif"></td>
+          <td align="left" class="inputHeader"><img src="@routes.Assets.at("images/back/plus.gif")"></td>
           <td align="left" class="inputHeader"><a href="javascript:show('t2',8)" class="menuLink"></a><a href="javascript:show('t2',8)" class="menuLink">数码产品</a></td>
           </tr>
         <tr id="t2" style="display:none">
           <td colspan="3"><table class="inputTable" border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td width="4%" align="right" class="inputContent"><input type="checkbox" name="category3" value="smxj"></td>
-                <td width="4%" align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td width="4%" align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td width="92%" class="inputContent">数码相机</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category3" value="mp3"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">mp3</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category3" value="smlyb"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">数码录音笔</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category3" value="smpj"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">数码配件</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category3" value="ej"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">耳机</td>
               </tr>
           </table></td>
@@ -142,29 +142,29 @@
           <td align="right" class="inputHeader"><label>
           <input type="checkbox" name="category4" value="xhsd">
           </label></td>
-          <td align="center" class="inputHeader"><img src="../image/plus.gif"></td>
+          <td align="center" class="inputHeader"><img src="@routes.Assets.at("images/back/plus.gif")"></td>
           <td align="left" class="inputHeader"><a href="javascript:show('t3',8)" class="menuLink">鲜花速递</a> </td>
         </tr>
         <tr id="t3" style="display:none">
           <td colspan="3"><table class="inputTable" border="0" cellpadding="0" cellspacing="0" width="100%">
               <tr>
                 <td width="4%" align="right" class="inputContent"><input type="checkbox" name="category4" value="mg"></td>
-                <td width="4%" align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td width="4%" align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td width="92%" class="inputContent">玫瑰</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category4" value="bh"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">百合</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category4" value="yjx"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">郁金香</td>
               </tr>
               <tr>
                 <td align="right" class="inputContent"><input type="checkbox" name="category4" value="knx"></td>
-                <td align="right" class="inputContent"><img src="../image/minus1.JPG"></td>
+                <td align="right" class="inputContent"><img src="@routes.Assets.at("images/back/minus1.JPG")"></td>
                 <td class="inputContent">康耐馨</td>
               </tr>
               
@@ -180,14 +180,13 @@
 <input type="button" name="edit" value="编辑目录" onClick="checkselectno()"></td>
                 </tr>
             </table>
+            </form>
             </div>
             </div>
-            
-            
-            
             <div id="double2">
             <div id="doublehead2"><strong>添加目录</strong></div>
             <div id="doublecontent2">
+            <form action="" method="post" enctype="multipart/form-data" name="form2">
                 <table id="itemsearch">
                    <tr>
                     <th class="itemsearchth" >目录名：</th>
@@ -232,11 +231,10 @@
                     </td>
                  </tr>
         </table>
-        </form>     
+        </form>
             </div>
     </div>
     </div>
-}
 <script>
 function show(table,sum){
 var t;
@@ -307,3 +305,4 @@ else
 
 }
 </script>
+}

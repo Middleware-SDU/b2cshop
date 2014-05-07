@@ -1,13 +1,6 @@
+@(activeUser: cn.edu.sdu.b2cshop.system.users.models.User)
+
 @views.html.layouts.frameLayout("B2C商城") {
-    <div id="logalleft">
-        <div id="logalright">
-        <a href="register.html" target="_parent">[注册&nbsp;</a>] | 
-        <a href="" target="_parent">王小静 已登录| 
-        <a href="user_edit.html" target="_parent">个人信息维护</a> | 
-        <a href="address_daohang.html" target="_parent">地址簿</a> |
-        <a href="home_nologin.html" target="_parent">退出</a>
-        </div>
-    </div>
     <div id="globallink">
         <ul>
             <li><a href="home.html">首页</a></li>
@@ -24,7 +17,7 @@
     <div id="main">
         <div id="search2">
             <div id="searchleft">
-                <img src="../image/ico_site.jpg"  id="ico_site"/>
+                <img src="@routes.Assets.at("images/web/ico_site.jpg")"  id="ico_site"/>
                 网站路径：<a href="home.html">首页</a>&gt;&gt;<a href=""> 个人信息维护</strong></a>
             </div>
             <div id="searchright2">
@@ -47,18 +40,10 @@
             <div id="sendnotecontent">
             <form action="" method="post" enctype="multipart/form-data" name="form1">
                 <table id="itemsearch">
-                   <tr>
-                    <th class="itemsearchth" >E-mail地址：</th>
-                    <td class="itemsearchtd1">
-                    <input type="text" name="email" class="inputtext" onFocus="nextfield='password'" value="wangxj123@@163.com" maxlength="25" disabled="disabled"/>
-                    </td>
-                    <td class="itemsearchtd2">
-                        <span class="red">*&nbsp;不可更改</span>                    </td>
-                 </tr>
                  <tr>
                  <th class="itemsearchth">昵&nbsp;&nbsp;&nbsp;&nbsp;称：</th>
                     <td class="itemsearchtd1">
-                        <input type="text" name="name" class="inputtext"onFocus="nextfield='passwordConfirm'" value="wangxj" maxlength="25"/>
+                        <input type="text" name="username" class="inputtext"onFocus="nextfield='passwordConfirm'" value="@activeUser.getUsername()" maxlength="25"/>
                     </td>
                     <td class="itemsearchtd2">
                         <span class="red">*&nbsp;(可选项)</span>
@@ -67,7 +52,7 @@
                  <tr>
                  <th class="itemsearchth">原&nbsp;密&nbsp;码：</th>
                     <td class="itemsearchtd1">
-                        <input type="Password" class="inputtext" name="passwordold" onFocus="nextfield='name'" value="" maxlength="25">
+                        <input type="Password" class="inputtext" name="password" value="" maxlength="25">
                     </td>
                     <td class="itemsearchtd2">
                         <span class="red">*&nbsp;必输项</span>
@@ -76,7 +61,7 @@
                  <tr>
                  <th class="itemsearchth">新&nbsp;密&nbsp;码：</th>
                     <td class="itemsearchtd1">
-                    <input type="Password" class="inputtext" name="passwordnew" onFocus="nextfield='name'" value="" maxlength="25">   
+                    <input type="Password" class="inputtext" name="passwordNew" value="" maxlength="25">   
                     </td>
                     <td class="itemsearchtd2">
                         <span class="red">*&nbsp;必输项</span>
@@ -85,7 +70,7 @@
                  <tr>
                  <th class="itemsearchth">密码确认：</th>
                     <td class="itemsearchtd1">
-                  <input type="Password" class="inputtext" name="passwordConfirm" onFocus="nextfield='sex'" value="" maxlength="25"> 
+                  <input type="Password" class="inputtext" name="confirmPassword" onFocus="nextfield='sex'" value="" maxlength="25"> 
                     </td>
                     <td class="itemsearchtd2">
                         <span class="red">*&nbsp;必输项</span>
@@ -93,7 +78,7 @@
                  </tr>
                  <tr>
                  <th></th>
-                    <td><input type="Button" name="button2" value="提交" onClick="checkinfoeditform()">
+                    <td><input type="submit" name="button2" value="提交">
                         &nbsp;<input type="Reset" name="button1" value="重填" onClick="clear()">
                         &nbsp;<input type="Button" name="button3" value="返回" onClick="javascript:window.location.href='home.html'">
                     </td>

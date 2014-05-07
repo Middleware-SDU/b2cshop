@@ -1,3 +1,10 @@
+
+@import cn.edu.sdu.b2cshop.application.utils.ContextHelper
+
+@loggedUser = @{
+    ContextHelper.getLoggedUser()
+}
+
 @views.html.layouts.backFrameLayout("B2C商城") {
     <div id="logalleft">
         <div id="logalright">

@@ -1,10 +1,6 @@
+@import helper._
+
 @views.html.layouts.frameLayout("B2C商城") {
-    <div id="logalleft">
-        <div id="logalright">
-        <a href="register.html" target="_parent">[注册]</a> &nbsp;| 
-        <a href="login.html" target="_parent">会员登录</a>
-        </div>
-    </div>
     <div id="globallink">
         <ul>
             <li><a href="home.html">首页</a></li>
@@ -21,7 +17,7 @@
     <div id="main">
         <div id="search2">
             <div id="searchleft">
-                <img src="../image/ico_site.jpg"  id="ico_site"/>
+                <img src="@routes.Assets.at("images/web/ico_site.jpg")"  id="ico_site"/>
                 网站路径：<a href="home.html">首页</a>&gt;&gt;<a href="">新用户注册</strong></a>
             </div>
             <div id="searchright2">
@@ -41,29 +37,21 @@
         <div id="sendnote">
             <div id="sendnotehead"><strong>新用户注册</strong></div>
             <div id="sendnotecontent">
-            <form action="" method="post" enctype="multipart/form-data" name="form1">
+            @form(cn.edu.sdu.b2cshop.system.commons.controllers.routes.AuthController.register()) {
                 <table id="itemsearch">
-                   <tr>
-                    <th class="itemsearchth" >请输入E-mail 地址：</th>
-                    <td class="itemsearchtd1">
-                        <input type="text" name="email" class="inputtext"/>
-                    </td>
-                    <td class="itemsearchtd2">
-                        <span class="red">*&nbsp;必输项    </span>             </td>
-                 </tr>
                  <tr>
                  <th class="itemsearchth">请输入昵称：</th>
                     <td class="itemsearchtd1">
-                        <input type="text" name="name" class="inputtext"/>
+                    <input type="text" name="username" class="inputtext"/>
                     </td>
                     <td class="itemsearchtd2">
-                        <span class="red">&nbsp;(可选项)   </span>
+                        <span class="red">*&nbsp;必输项   </span>
                     </td>
                  </tr>
                  <tr>
                  <th class="itemsearchth">登录密码：</th>
                     <td class="itemsearchtd1">
-                        <input type="Password" name="password" class="inputtext"/>
+                    <input type="Password" name="password" class="inputtext"/>
                     </td>
                     <td class="itemsearchtd2">
                     <span class="red">*&nbsp;必输项    </span>
@@ -72,7 +60,7 @@
                  <tr>
                  <th class="itemsearchth">密码确认：</th>
                     <td class="itemsearchtd1">
-                    <input type="Password" name="passwordConfirm" class="inputtext"/>
+                    <input type="Password" name="confirmPassword" class="inputtext"/>
                     </td>
                     <td class="itemsearchtd2">
                     <span class="red">*&nbsp;必输项    </span>
@@ -80,13 +68,13 @@
                  </tr>
                  <tr>
                  <th></th>
-                    <td><input type="Button" class="bt2" name="button2" value="提交" onClick="checkregform()">
+                    <td><input type=submit class="bt2" name="button2" value="提交">
                         &nbsp;<input type="Reset" class="bt2" name="button1" value="重填" onClick="clear()">
                         &nbsp;<input type="Button" class="bt2" name="button3" value="返回" onClick="javascript:window.location.href='home.html'">
                     </td>
                  </tr>
         </table>
-        </form>     
+        }
             </div>
         </div>
     </div>

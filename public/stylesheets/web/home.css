@@ -1,7 +1,7 @@
 body{
     font-family: "Arial", "Helvetica", "sans-serif";
     font-size: 12px;
-    background:transparent url(../image/bg-index.jpg) repeat-x scroll center top;
+    background:transparent url(../../images/web/bg-index.jpg) repeat-x scroll center top;
     text-align: center;
 }
 
@@ -12,12 +12,12 @@ body{
     margin:0px,auto;
     height:52px;
     border:none;
-    background-image:url(../image/whole8.jpg);
+    background-image:url(../../images/web/whole8.jpg);
 }
 
 
 #logalleft{
-    background-image:url(../image/logal8.gif);
+    background-image:url(../../images/web/logal8.gif);
     width:800px;
     height:45px;
 }
@@ -81,13 +81,13 @@ body{
 #globallink a{
     display:block;
     padding:5px 6px 8px 6px;
-    background:url(../image/navigation-menu.png) no-repeat;
+    background:url(../../images/web/navigation-menu.png) no-repeat;
     margin:0px;
 }
 /*
 #globallink li a#current{
     color:#FFFFFF;
-    background:url(../image/button.jpg) no-repeat;
+    background:url(../../images/web/button.jpg) no-repeat;
 
 }
 */
@@ -98,26 +98,26 @@ body{
 #globallink a:hover{
     color:#FFFFFF;
     text-decoration:none;
-    background:url(../image/button.jpg) no-repeat;
+    background:url(../../images/web/button.jpg) no-repeat;
     /* 替换背景图片 */
 }
 #globallink .nouseful:hover{
     color:#FFFFFF;
     text-decoration:none;
-    background:url(../image/navigation-menu.png) no-repeat;
+    background:url(../../images/web/navigation-menu.png) no-repeat;
 }
 
 #left{
     height:728px;
     width:179px;
     float:left;
-    background:#FFFFFF url(../image/leftbotton.jpg) no-repeat;
+    background:#FFFFFF url(../../images/web/leftbotton.jpg) no-repeat;
     margin:5px 2px 0px 0px;
     border:#00CCFF solid 1px;
 }
 
 #category{
-    background:url(../image/category.jpg) no-repeat;
+    background:url(../../images/web/category.jpg) no-repeat;
     padding:55px 0px 40px 0px;
 }
 #category h4{
@@ -134,7 +134,7 @@ body{
 #category ul li{
     padding:2px 0px 2px 16px;
     border-bottom:1px dashed #999999;
-    background:url(../image/icon1.gif) no-repeat 5px 7px;
+    background:url(../../images/web/icon1.gif) no-repeat 5px 7px;
 }
 
 strong{
@@ -223,19 +223,19 @@ strong{
 }
 
 #recommend{
-    background:url(../image/recommend2.jpg) no-repeat;
+    background:url(../../images/web/recommend2.jpg) no-repeat;
     margin:3px 0px 0px 0px;
     padding:30px 0px 0px 0px;
     background-color:#FFFFFF;
 }
 #new{
-    background:url(../image/book2.jpg) no-repeat;
+    background:url(../../images/web/book2.jpg) no-repeat;
     margin:3px 0px 0px 0px;
     padding:30px 0px 0px 0px;
     background-color:#FFFFFF;
 }
 #life{
-    background:url(../image/life2.jpg) no-repeat;
+    background:url(../../images/web/life2.jpg) no-repeat;
     margin:3px 0px 0px 0px;
     padding:30px 0px 0px 0px;
     background-color:#FFFFFF;
