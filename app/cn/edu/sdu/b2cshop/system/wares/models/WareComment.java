@@ -1,5 +1,7 @@
 package cn.edu.sdu.b2cshop.system.wares.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -42,6 +44,8 @@ public class WareComment extends BaseModel {
     @ManyToOne(fetch = FetchType.LAZY)
     private Ware ware;
 
+    private Date forDate;
+    
     public WareComment() {}
 
     public WareComment(String title) {
@@ -83,6 +87,22 @@ public class WareComment extends BaseModel {
 
     public void setWare(Ware ware) {
         this.ware = ware;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public Date getForDate() {
+        return forDate;
+    }
+
+    public void setForDate(Date forDate) {
+        this.forDate = forDate;
     }
 
 }

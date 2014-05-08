@@ -1,3 +1,24 @@
+# Users
+users:
+
+    - &user_A !!cn.edu.sdu.b2cshop.system.users.models.User
+        username:      yyg
+        password:      123456
+        realname:      游客A
+        admin:         false
+
+    - &user_B !!cn.edu.sdu.b2cshop.system.users.models.User
+        username:      msz
+        password:      123456
+        realname:      游客B
+        admin:         false
+
+    - &user_admin !!cn.edu.sdu.b2cshop.system.users.models.User
+        username:      admin
+        password:      123456
+        realname:      管理员
+        admin:         true
+
 # WareCategories
 
 wareCategories:
@@ -139,7 +160,7 @@ wares:
     - &ware_1 !!cn.edu.sdu.b2cshop.system.wares.models.Ware
         code:           001
         name:           大学物理学.第四册:波动与光学(第2版)
-        description:    无
+        description:    本书是清华大学教材《大学物理学》的第四册，讲述振动与波的一般基本规律和波动光学的基本原理，包括光的干涉、衍射和偏振。除了基本内容外，还专题介绍了全息照相、光学信息处理、液晶等今日物理趣闻和著名物理学家托马斯·杨和菲涅耳的传略。基本内容扼要，附加内容通俗易懂。本书可作为高等院校的大学物理教材，也可以作为中学物理教师教学或其他读者自学的参考书。
         price:          8.5
         discount:       85
         stack:          200
@@ -185,3 +206,21 @@ wares:
         stack:          200
         logopath:       images/wares/2/3/mp3.jpg
         category:       *category_e4
+
+# WareComment
+
+wareComments:
+
+    - &comment_1 !!cn.edu.sdu.b2cshop.system.wares.models.WareComment
+        score:      FOUR
+        title:      很不错
+        content:    很不错的一本书，通俗易懂，是大学物理教材中的经典之作。
+        author:     *user_A
+        ware:       *ware_1
+
+    - &comment_2 !!cn.edu.sdu.b2cshop.system.wares.models.WareComment
+        score:      FOUR
+        title:      不错
+        content:    看过了，确实不错。
+        author:     *user_B
+        ware:       *ware_1
