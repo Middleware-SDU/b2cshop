@@ -1,0 +1,60 @@
+@views.html.layouts.frameLayout("B2C商城") {
+<div id="sendnote">
+    <div id="sendnotehead">
+        <strong> 添加地址簿</strong>
+    </div>
+    <div id="sendnotecontent">
+
+        <form action="" method="post" enctype="multipart/form-data"
+            name="form1">
+            <table id="itemsearch">
+                <tr>
+                    <th class="itemsearchth">姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</th>
+                    <td class="itemsearchtd1"><input type="text" name="name"
+                        class="inputtext" onFocus="nextfield='password'" value=""
+                        maxlength="25" /></td>
+                    <td class="itemsearchtd2"><span class="red">*&nbsp;必输项</span></td>
+                </tr>
+                <tr>
+                    <th class="itemsearchth">本地/外地：</th>
+                    <td class="itemsearchtd1"><select name="province">
+                            <option>请选择</option>
+                            <option>本地</option>
+                            <option>外地</option>
+                    </select></td>
+                    <td class="itemsearchtd2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="itemsearchth"><span class="inputHeader">通讯地址：</span></th>
+                    <td class="itemsearchtd1"><input type="Text" class="inputtext"
+                        name="address" onFocus="nextfield='name'" value="" maxlength="25">
+                    </td>
+                    <td class="itemsearchtd2"><span class="red">*&nbsp;必输项</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="itemsearchth"><span class="inputHeader">邮政编码：</span></th>
+                    <td class="itemsearchtd1"><input type="Text" class="inputtext"
+                        name="postcode" onFocus="nextfield='sex'" value="" maxlength="25">
+                    </td>
+                    <td class="itemsearchtd2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="itemsearchth"><span class="inputHeader">手机号码：</span></th>
+                    <td class="itemsearchtd1"><input type="Text" class="inputtext"
+                        name="phone" onFocus="nextfield='sex'" value="" maxlength="25">
+                    </td>
+                    <td class="itemsearchtd2"><span class="red">*&nbsp;必输项</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td><input type="Button" name="button22" value="提交"
+                        onClick="checkaddressnew()"> &nbsp;<input type="Reset"
+                        name="button1" value="重填" onClick="clear()"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+}

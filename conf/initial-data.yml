@@ -1,0 +1,133 @@
+# WareCategories
+
+wareCategories:
+
+# 图书音像
+    - &category_books_video_audio !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       图书音像
+        level:      0
+
+    - &category_bva1 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       教材
+        level:      0
+        parent:     *category_books_video_audio
+
+    - &category_bva2 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       外语
+        level:      1
+        parent:     *category_books_video_audio
+
+    - &category_bva3 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       公务员考试
+        level:      2
+        parent:     *category_books_video_audio
+
+    - &category_bva4 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       音乐
+        level:      3
+        parent:     *category_books_video_audio
+
+    - &category_bva5 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       影视
+        level:      4
+        parent:     *category_books_video_audio
+
+# 时尚生活
+    - &category_fashion_life !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       时尚生活
+        level:      1
+
+    - &category_fl1 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       护肤
+        level:      0
+        parent:     *category_fashion_life
+
+    - &category_fl2 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       服装
+        level:      1
+        parent:     *category_fashion_life
+
+    - &category_fl3 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       手饰
+        level:      2
+        parent:     *category_fashion_life
+
+    - &category_fl4 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       箱包
+        level:      3
+        parent:     *category_fashion_life
+
+    - &category_fl5 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       小家电
+        level:      4
+        parent:     *category_fashion_life
+
+    - &category_fl6 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       运动健身
+        level:      5
+        parent:     *category_fashion_life
+
+# 数码产品
+    - &category_electronics !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       数码产品
+        level:      2
+
+    - &category_e1 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       数码相机
+        level:      0
+        parent:     *category_electronics
+
+    - &category_e2 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       数码录音笔
+        level:      1
+        parent:     *category_electronics
+
+    - &category_e3 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       硬盘
+        level:      2
+        parent:     *category_electronics
+
+    - &category_e4 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       MP3
+        level:      3
+        parent:     *category_electronics
+
+    - &category_e5 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       耳机
+        level:      4
+        parent:     *category_electronics
+
+    - &category_e6 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       数码配件
+        level:      5
+        parent:     *category_electronics
+
+# 鲜花速递
+    - &category_flowers_express !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       鲜花速递
+        level:      3
+
+    - &category_fe1 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       玫瑰
+        level:      0
+        parent:     *category_flowers_express
+
+    - &category_fe2 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       百合
+        level:      1
+        parent:     *category_flowers_express
+        
+    - &category_fe3 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       康乃馨
+        level:      2
+        parent:     *category_flowers_express
+
+    - &category_fe4 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       太阳花
+        level:      3
+        parent:     *category_flowers_express
+
+    - &category_fe5 !!cn.edu.sdu.b2cshop.system.wares.models.WareCategory
+        name:       菊花
+        level:      4
+        parent:     *category_flowers_express

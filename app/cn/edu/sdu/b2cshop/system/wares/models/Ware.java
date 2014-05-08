@@ -6,7 +6,9 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 import cn.edu.sdu.b2cshop.system.commons.BaseModel;
 
 
@@ -34,6 +36,9 @@ public class Ware extends BaseModel {
 
     @Column(nullable=false)
     private Long stack;
+
+    @ManyToOne
+    private WareCategory category;
 
     @OneToMany(mappedBy = "ware", cascade = { CascadeType.REMOVE }, targetEntity = WareComment.class)
     private List<WareComment> comments = new ArrayList<WareComment>();

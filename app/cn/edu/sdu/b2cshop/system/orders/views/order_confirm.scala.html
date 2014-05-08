@@ -1,0 +1,103 @@
+@views.html.layouts.frameLayout("B2C商城") {
+<div id="double1">
+    <div id="doublehead1">
+        <strong>商品清单</strong>&nbsp;<a href="cart_list_edit.html"><img
+            src="../image/edit.gif" alt="修改" class="picture"></a>
+    </div>
+    <div id="doublecontent1">
+        <form action="" method="post" enctype="multipart/form-data"
+            name="form1">
+            <table id="doublecontenttable1">
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>商品名</th>
+                        <th>市场价</th>
+                        <th>折扣</th>
+                        <th>您的价格</th>
+                        <th>数量</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span>1</span></td>
+                        <td><a href="item_info.html">大学物理学.第四册：波动与光学（第2版）</a></td>
+                        <td>￥10.00</td>
+                        <td>85折</td>
+                        <td>￥8.50</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><span>2</span></td>
+                        <td><a href="">大学物理学.第一册：力学（第2版）</a></td>
+                        <td>￥16.00</td>
+                        <td>85折</td>
+                        <td>￥13.60</td>
+                        <td>1</td>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <td>总价</td>
+                        <td><span class="red">商品价格:￥22.10 + 送货费:￥5.00 = ￥25.10</span>
+                        </td>
+                        <td>使用积分:</td>
+                        <td><input type="Text" name="credit"
+                            onFocus="nextfield='sex'" value="" maxlength="25"
+                            class="smallinputext"></td>
+                        <td><input type="Button" class="bt2" name="button2"
+                            value="确定" onClick="checkcredit()"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>本单将产生积分：</td>
+                        <td><span class="red">22</span></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+<div id="double2">
+    <div id="doublehead2">
+        <strong>送货地址</strong>&nbsp;<a href="address.html"><img
+            src="../image/edit.gif" alt="修改" class="picture"></a>
+    </div>
+    <div id="doublecontent2">
+        <form action="" method="post" enctype="multipart/form-data"
+            name="form2">
+            <table id="itemsearch">
+                <tr>
+                    <th class="itemsearchth">姓&nbsp;&nbsp;&nbsp;&nbsp;名：</th>
+                    <td class="itemsearchtd1">王小静</td>
+                    <td class="itemsearchtd2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="itemsearchth">地&nbsp;&nbsp;&nbsp;&nbsp;址：</th>
+                    <td class="itemsearchtd1">北京市海淀区翠微路甲5号</td>
+                    <td class="itemsearchtd2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="itemsearchth">电话号码：</th>
+                    <td class="itemsearchtd1">13812345678</td>
+                    <td class="itemsearchtd2"></td>
+                </tr>
+                <tr>
+                    <th class="itemsearchth"><span class="inputHeader">支付方式：</span></th>
+                    <td class="itemsearchtd1">货到付款</td>
+                    <td class="itemsearchtd2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <th class="itemsearchth">&nbsp;</th>
+                    <td class="itemsearchtd1">&nbsp;</td>
+                    <td class="itemsearchtd2">请仔细核查信息，确定无误后： <input type="button"
+                        name="Submit" value="提交订单"
+                        onclick="javascript:window.location.href='order_success.html'" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+}

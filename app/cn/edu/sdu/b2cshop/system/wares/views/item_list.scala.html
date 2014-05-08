@@ -1,0 +1,29 @@
+@views.html.layouts.mainLayout("教材") {
+<div id="sendnote">
+    <div id="sendnotehead">
+        <strong>商品列表</strong>
+    </div>
+    <div id="sendnotecontent">
+        <table id="favorite">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>商品图片</th>
+                    <th>商品信息</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span>1</span></td>
+                    <td><img src="@routes.Assets.at("images/web/4star.JPG")" class="picture1" /></td>
+                    <td><span class="red">大学物理学.第四册：波动与光学（第2版）</span><br>
+                        市场价：￥10.00<br> 会员价：￥8.50<br> <a href="cart_list.html"><img
+                            src="@routes.Assets.at("images/web/goumai.gif")" alt="购买" class="picture"></a>&nbsp; <a
+                        href="favorite.html"><img src="@routes.Assets.at("images/web/put_to_collection.gif")"
+                            alt="收藏" class="picture"></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+}
