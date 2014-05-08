@@ -9,7 +9,6 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import views.html.web.home;
-import views.html.web.home_nologin;
 import views.html.web.login;
 import views.html.web.register;
 import cn.edu.sdu.b2cshop.application.utils.ContextHelper;
@@ -105,7 +104,7 @@ public class AuthController extends Controller {
         // remove 'rememberme' cookie
         response().discardCookie(COOKIE_KEY_REMEMBER_ME);
         List<Ware> wares = Ware.dao.findAll();
-        return ok(home_nologin.render(wares));
+        return ok(home.render(wares));
     }
 
 }
