@@ -1,15 +1,14 @@
 package cn.edu.sdu.b2cshop.system.commons.controllers;
 
+import java.util.List;
+
 import play.Logger;
 import play.data.Form;
-import play.data.validation.Constraints.Required;
-import play.i18n.Messages;
 import play.libs.Crypto;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.With;
 import views.html.web.home;
-import views.html.web.home_nologin;
 import views.html.web.login;
 import views.html.web.register;
 import cn.edu.sdu.b2cshop.application.utils.ContextHelper;
@@ -17,6 +16,7 @@ import cn.edu.sdu.b2cshop.core.db.jpa.OptionalTransactionalAction;
 import cn.edu.sdu.b2cshop.core.db.jpa.Transactional;
 import cn.edu.sdu.b2cshop.system.users.forms.AddUserForm;
 import cn.edu.sdu.b2cshop.system.users.models.User;
+import cn.edu.sdu.b2cshop.system.wares.models.Ware;
 
 
 @With({
@@ -96,13 +96,15 @@ public class AuthController extends Controller {
         return ok(home.render());
     }
 
+    @Transactional
     public Result logout() {
         Logger.debug("AuthController.loginout");
         // clear session
         session().clear();
         // remove 'rememberme' cookie
         response().discardCookie(COOKIE_KEY_REMEMBER_ME);
-        return ok(home_nologin.render());
+        List<Ware> wares = Ware.dao.findAll();
+        return ok(home.render(wares));
     }
 
 }

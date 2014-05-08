@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import cn.edu.sdu.b2cshop.system.commons.BaseModel;
+import cn.edu.sdu.b2cshop.system.wares.daos.WareDAO;
+import cn.edu.sdu.b2cshop.system.wares.daos.impls.WareDAOImpl;
 
 
 @Entity
@@ -20,10 +22,10 @@ public class Ware extends BaseModel {
     @Column(length=30, nullable=false)
     private String code;
 
-    @Column(length=10, nullable=false)
+    @Column(length=50, nullable=false)
     private String name;
 
-    @Column(length=100)
+    @Column(length=300)
     private String description;
 
     @Column(length=100)
@@ -43,7 +45,17 @@ public class Ware extends BaseModel {
     @OneToMany(mappedBy = "ware", cascade = { CascadeType.REMOVE }, targetEntity = WareComment.class)
     private List<WareComment> comments = new ArrayList<WareComment>();
 
+    public static WareDAO dao = new WareDAOImpl();
+
     public Ware() {}
+
+    public WareCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory(WareCategory category) {
+        this.category = category;
+    }
 
     public Ware(String name) {
         this.name = name;
