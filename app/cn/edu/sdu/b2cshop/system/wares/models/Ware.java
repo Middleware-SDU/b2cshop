@@ -1,5 +1,6 @@
 package cn.edu.sdu.b2cshop.system.wares.models;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +48,9 @@ public class Ware extends BaseModel {
 
     public static WareDAO dao = new WareDAOImpl();
 
-    public Ware() {}
+    public Ware() {
+        this.stack = 10L;
+    }
 
     public WareCategory getCategory() {
         return category;
@@ -125,6 +128,18 @@ public class Ware extends BaseModel {
         this.comments = comments;
     }
 
+    public String getRealPrice() {
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMaximumFractionDigits(2);
+        return nf.format(this.price * this.discount / 100);
+    }
+
+    public String jiesheng() {
+        NumberFormat nf = NumberFormat.getNumberInstance();
+        nf.setMaximumFractionDigits(2);
+        return nf.format(this.price - this.price * this.discount / 100);
+    }
+
     /**
      * Add a comment to comments
      * @param comment
@@ -146,6 +161,14 @@ public class Ware extends BaseModel {
         if(this.comments != null && this.comments.contains(comment)) {
             this.comments.remove(comment);
         }
+    }
+
+    public void updateStack(Integer count) {
+        if(count > this.stack) {
+            this.stack = 0L;
+            return;
+        }
+        this.stack -= count;
     }
 
 }

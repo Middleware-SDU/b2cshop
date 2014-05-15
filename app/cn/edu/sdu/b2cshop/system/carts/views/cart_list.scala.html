@@ -1,62 +1,74 @@
+@(ware: cn.edu.sdu.b2cshop.system.wares.models.Ware)
+
+@import helper._
+@import cn.edu.sdu.b2cshop.application.utils.ContextHelper
+@import cn.edu.sdu.b2cshop.application.utils._OrderHelper
+
+@loggedUser = @{
+    ContextHelper.getLoggedUser()
+}
+
+@_orderItems = @{
+    _OrderHelper.getOrderItems()
+}
+
 @views.html.layouts.mainLayout("购物车") {
 <div id="sendnote">
     <div id="sendnotehead">
         <strong>购物车内的商品</strong>
     </div>
     <div id="sendnotecontent">
-        <form action="" method="post" enctype="multipart/form-data"
-            name="form1">
-            <table id="favorite">
-                <thead>
-                    <tr>
-                        <th>No.</th>
-                        <th>商品名</th>
-                        <th>市场价</th>
-                        <th>会员价</th>
-                        <th>为您节省</th>
-                        <th>数量</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
+        <table id="favorite">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>商品名</th>
+                    <th>数量</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            @for(oi <- _orderItems) {
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td><a href="item_info.html">大学物理学.第四册：波动与光学（第2版）</a></td>
-                        <td>￥10.00</td>
-                        <td>￥8.50</td>
-                        <td>￥1.50</td>
-                        <td><input type="text" name="itemNo1" class="smallinputext"
-                            value="1"></td>
-                        <td><a href="favorite.html"><img src="@routes.Assets.at("images/web/collection.gif")"  class="picture" /></a>&nbsp; <a
-                            href="#" onClick="window.confirm('确定删除？')"><img
-                                src="@routes.Assets.at("images/web/delete_item.gif")" class="picture" /></a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><input type="button" name="continue" value="继续购物"
-                            onClick="javascript:window.location.href='@cn.edu.sdu.b2cshop.system.commons.controllers.routes.HomePageController.index()'">&nbsp;
-                            <input type="button" name="edit2" value="更新"
-                            onClick="checkitemno()"></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a
-                            href="@cn.edu.sdu.b2cshop.system.carts.controllers.routes.TradeController.check(1,2)"><img
-                                src="@routes.Assets.at("images/web/check_account.gif")" class="picture" /></a></td>
+                        <td>@oi.getWare.getCode</td>
+                        <td><a href="item_info.html">@oi.getWare.getName</a></td>
+                        <td>
+                            <input id="count_@oi.getWare.getId" type="text" name="count" class="smallinputext" value="@oi.getCount" 
+                            url="@cn.edu.sdu.b2cshop.system.carts.controllers.routes.CartController.modifyCount(oi.getWare.getId).url">
+                        </td>
+                        <td>
+                            <a href="@cn.edu.sdu.b2cshop.system.carts.controllers.routes.CartController.removeFromCart(ware.getId)" onClick="window.confirm('确定删除？')">
+                                <img src="@routes.Assets.at("images/web/delete_item.gif")" class="picture" />
+                            </a>
+                        </td>
                     </tr>
                 </tbody>
-            </table>
-        </form>
+            }
+            <tr><td></td><td></td><td></td><td>总价：<span id="totalPrice">@_OrderHelper.getTotalPrice()</span>（元）</td></tr>
+            <tr>
+                <td><a href="@cn.edu.sdu.b2cshop.system.carts.controllers.routes.TradeController.buy()"><img src="@routes.Assets.at("images/web/check_account.gif")" class="picture" /></a></td>
+            </tr>
+        </table>
     </div>
 </div>
 }
+
+<script>
+    $(function(){
+        $("input").each(function() {
+            $(this).blur(function() {
+                $.ajax({
+                    url : $(this).attr("url"),
+                    type : 'POST',
+                    data : {"count" : $(this).val()},
+                    success : function(data) {
+                        $("#totalPrice").html(data);
+                    },
+                    error : function() {
+                    }
+                });
+            });
+        });
+    });
+</script>
+

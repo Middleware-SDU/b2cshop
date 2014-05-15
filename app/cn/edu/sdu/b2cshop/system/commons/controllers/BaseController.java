@@ -1,10 +1,6 @@
 package cn.edu.sdu.b2cshop.system.commons.controllers;
 
-import java.util.Date;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
-
 import cn.edu.sdu.b2cshop.application.utils.ContextHelper;
 import cn.edu.sdu.b2cshop.core.db.jpa.JPA;
 import cn.edu.sdu.b2cshop.system.users.models.User;
@@ -14,7 +10,6 @@ import play.libs.F.Promise;
 import play.mvc.Action;
 import play.mvc.Controller;
 import play.mvc.Http.Context;
-import play.mvc.Security;
 import play.mvc.SimpleResult;
 import play.mvc.With;
 

@@ -1,7 +1,5 @@
 package cn.edu.sdu.b2cshop.system.commons.controllers;
 
-import java.util.List;
-
 import play.Logger;
 import play.data.Form;
 import play.libs.Crypto;
@@ -16,8 +14,6 @@ import cn.edu.sdu.b2cshop.core.db.jpa.OptionalTransactionalAction;
 import cn.edu.sdu.b2cshop.core.db.jpa.Transactional;
 import cn.edu.sdu.b2cshop.system.users.forms.AddUserForm;
 import cn.edu.sdu.b2cshop.system.users.models.User;
-import cn.edu.sdu.b2cshop.system.wares.models.Ware;
-
 
 @With({
     OptionalTransactionalAction.class
@@ -91,9 +87,9 @@ public class AuthController extends Controller {
         session("username", loginForm.get().username);
         User user = ContextHelper.getLoggedUser();
         if(user.isAdmin()) {
-            return ok(views.html.back.category_list.render());
+            return redirect(cn.edu.sdu.b2cshop.system.wares.controllers.routes.WareCategoryController.index());
         }
-        return ok(home.render());
+        return redirect(cn.edu.sdu.b2cshop.system.commons.controllers.routes.HomePageController.index());
     }
 
     @Transactional
@@ -103,8 +99,7 @@ public class AuthController extends Controller {
         session().clear();
         // remove 'rememberme' cookie
         response().discardCookie(COOKIE_KEY_REMEMBER_ME);
-        List<Ware> wares = Ware.dao.findAll();
-        return ok(home.render(wares));
+        return redirect(cn.edu.sdu.b2cshop.system.commons.controllers.routes.HomePageController.index());
     }
 
 }

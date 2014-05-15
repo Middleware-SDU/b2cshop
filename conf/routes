@@ -18,7 +18,9 @@ GET     /users/:id/view                        @cn.edu.sdu.b2cshop.system.users.
 # ware
 
 GET     /wares/search                          @cn.edu.sdu.b2cshop.system.wares.controllers.WareController.search()
-GET     /wares/:wareId                         @cn.edu.sdu.b2cshop.system.wares.controllers.WareController.view(wareId:Long)
+GET     /wares/view/:wareId                    @cn.edu.sdu.b2cshop.system.wares.controllers.WareController.view(wareId:Long)
+GET     /wares/add                             @cn.edu.sdu.b2cshop.system.wares.controllers.WareController.add()
+POST    /wares/save                            @cn.edu.sdu.b2cshop.system.wares.controllers.WareController.save()
 
 # ware-comment
 
@@ -27,13 +29,14 @@ GET     /wares/:wareId/add                     @cn.edu.sdu.b2cshop.system.wares.
 
 # ware-categories
 
-GET     /wares/categories/:id                  @cn.edu.sdu.b2cshop.system.wares.controllers.WareCategoryController.view(id:Long)
+GET     /waresCategories/:id                   @cn.edu.sdu.b2cshop.system.wares.controllers.WareCategoryController.view(id:Long)
+GET     /waresCategories                       @cn.edu.sdu.b2cshop.system.wares.controllers.WareCategoryController.index()
 
 # user
 
 # user-orders
 
-GET    /orders/:orderId                       @cn.edu.sdu.b2cshop.system.orders.controllers.OrderController.view(orderId:Long)
+GET    /orders/:orderId                        @cn.edu.sdu.b2cshop.system.orders.controllers.OrderController.view(orderId:Long)
 
 # user-credits
 
@@ -45,16 +48,18 @@ GET    /users/:userId/favorites                @cn.edu.sdu.b2cshop.system.users.
 
 # user-carts
 
-GET    /users/:userId/carts                    @cn.edu.sdu.b2cshop.system.carts.controllers.CartController.view(userId:Long)
+GET    /users/:wareId/addTocart                @cn.edu.sdu.b2cshop.system.carts.controllers.CartController.addToCart(wareId:Long)
+GET    /users/:wareId/removeFromcart           @cn.edu.sdu.b2cshop.system.carts.controllers.CartController.removeFromCart(wareId:Long)
+POST   /wares/:wareId/modifyCount              @cn.edu.sdu.b2cshop.system.carts.controllers.CartController.modifyCount(wareId:Long)
 
 # user-trades
 
 GET    /users/:userId/trades                   @cn.edu.sdu.b2cshop.system.carts.controllers.TradeController.view(userId:Long)
-GET    /users/:userId/carts/:cartId/check      @cn.edu.sdu.b2cshop.system.carts.controllers.TradeController.check(userId:Long,cartId:Long)
+GET    /cart/buy                               @cn.edu.sdu.b2cshop.system.carts.controllers.TradeController.buy()
 
 # user-addresses
 
 GET    /users/:userId/addresses                @cn.edu.sdu.b2cshop.system.users.controllers.UserAddressController.view(userId:Long)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /assets/*file                          controllers.Assets.at(path="/public", file)

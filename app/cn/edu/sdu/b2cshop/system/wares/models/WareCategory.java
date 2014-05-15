@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
 import cn.edu.sdu.b2cshop.system.commons.BaseModel;
+import cn.edu.sdu.b2cshop.system.wares.daos.WareCategoryDAO;
+import cn.edu.sdu.b2cshop.system.wares.daos.impls.WareCategoryDAOImpl;
 
 @Entity
 public class WareCategory extends BaseModel{
@@ -16,6 +18,8 @@ public class WareCategory extends BaseModel{
 
     @ManyToOne
     private WareCategory parent;
+
+    public static WareCategoryDAO dao = new WareCategoryDAOImpl();
 
     public String getName() {
         return name;

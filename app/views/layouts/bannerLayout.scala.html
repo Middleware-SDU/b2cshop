@@ -1,13 +1,22 @@
+
+@import cn.edu.sdu.b2cshop.application.utils.ContextHelper
+
+@loggedUser = @{
+    ContextHelper.getLoggedUser()
+}
+
 <div id="globallink">
     <ul>
         <li><a href="@cn.edu.sdu.b2cshop.system.commons.controllers.routes.HomePageController.index()">首页</a></li>
         <li><a href="@cn.edu.sdu.b2cshop.system.orders.controllers.routes.CreditController.view(1,2)">积分查询</a></li>
         <li><a href="@cn.edu.sdu.b2cshop.system.wares.controllers.routes.WareController.search()">商品搜索</a></li>
         <li><a href="@cn.edu.sdu.b2cshop.system.users.controllers.routes.FavoriteController.view(1)">收藏夹</a></li>
-        <li><a href="@cn.edu.sdu.b2cshop.system.carts.controllers.routes.CartController.view(1)">我的购物车</a></li>
+        <li><a href="@cn.edu.sdu.b2cshop.system.carts.controllers.routes.CartController.addToCart(1)">我的购物车</a></li>
         <li><a href="@cn.edu.sdu.b2cshop.system.carts.controllers.routes.TradeController.view(1)">交易查询</a></li>
         <li><a href="@cn.edu.sdu.b2cshop.system.users.controllers.routes.UserAddressController.view(1)">送货说明</a></li>
-        <li><a href="" class="nouseful">&nbsp;</a></li>
+        @if(loggedUser != null && loggedUser.isAdmin()) {
+            <li><a href="@cn.edu.sdu.b2cshop.system.wares.controllers.routes.WareCategoryController.index">后台管理</a></li>
+        }
     </ul>
 </div>
 <div id="banner"></div>

@@ -1,7 +1,9 @@
+@(wares: List[cn.edu.sdu.b2cshop.system.wares.models.Ware])
 @views.html.layouts.mainLayout("教材") {
 <div id="sendnote">
     <div id="sendnotehead">
         <strong>商品列表</strong>
+        <strong><a href="@cn.edu.sdu.b2cshop.system.wares.controllers.routes.WareController.add" style="float: right;margin-right: 10px;">添加商品</a></strong>
     </div>
     <div id="sendnotecontent">
         <table id="favorite">
@@ -13,15 +15,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><span>1</span></td>
-                    <td><img src="@routes.Assets.at("images/web/4star.JPG")" class="picture1" /></td>
-                    <td><span class="red">大学物理学.第四册：波动与光学（第2版）</span><br>
-                        市场价：￥10.00<br> 会员价：￥8.50<br> <a href="cart_list.html"><img
-                            src="@routes.Assets.at("images/web/goumai.gif")" alt="购买" class="picture"></a>&nbsp; <a
-                        href="favorite.html"><img src="@routes.Assets.at("images/web/put_to_collection.gif")"
-                            alt="收藏" class="picture"></a></td>
-                </tr>
+                @for(ware <- wares) {
+                    <tr>
+                        <td><span>@ware.getCode</span></td>
+                        <td><img src="@routes.Assets.at("images/web/4star.JPG")" class="picture1" /></td>
+                        <td><span class="red">@ware.getName</span><br>
+                            市场价：￥@ware.getPrice<br> 会员价：￥@ware.getDiscount<br> 库存量：￥@ware.getStack<br></td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

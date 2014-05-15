@@ -1,0 +1,67 @@
+@import helper._
+
+@views.html.layouts.frameLayout("B2C商城") {
+<div id="sendnote">
+    <div id="sendnotehead">
+        <strong>添加商品</strong>
+    </div>
+    <div id="sendnotecontent">
+        @form(cn.edu.sdu.b2cshop.system.wares.controllers.routes.WareController.save()) {
+                <table id="itemsearch">
+                 <tr>
+                 <th class="itemsearchth">商品编号：</th>
+                    <td class="itemsearchtd1">
+                    <input type="text" name="code" class="inputtext"/>
+                    </td>
+                    <td class="itemsearchtd2">
+                        <span class="red">*&nbsp;必输项   </span>
+                    </td>
+                 </tr>
+                 <tr>
+                 <th class="itemsearchth">商品名称 : </th>
+                    <td class="itemsearchtd1">
+                    <input type="text" name="name" class="inputtext"/>
+                    </td>
+                    <td class="itemsearchtd2">
+                    <span class="red">*&nbsp;必输项    </span>
+                    </td>
+                 </tr>
+                 <tr>
+                 <th class="itemsearchth">商品描述 : </th>
+                    <td class="itemsearchtd1">
+                    <input type="text" name="description" class="inputtext"/>
+                    </td>
+                    <td class="itemsearchtd2">
+                    <span class="red">*&nbsp;必输项    </span>
+                    </td>
+                 </tr>
+                 <tr>
+                 <th class="itemsearchth">商品价格 : </th>
+                    <td class="itemsearchtd1">
+                    <input type="text" name="price" class="inputtext"/>（元）
+                    </td>
+                    <td class="itemsearchtd2">
+                    <span class="red">*&nbsp;必输项    </span>
+                    </td>
+                 </tr>
+                 <tr>
+                 <th class="itemsearchth">商品折扣 : </th>
+                    <td class="itemsearchtd1">
+                    <input type="text" name="discount" class="inputtext"/>
+                    </td>
+                    <td class="itemsearchtd2">
+                    <span class="red">*&nbsp;必输项    </span>
+                    </td>
+                 </tr>
+                 <tr>
+                 <th></th>
+                    <td><input type=submit class="bt2" name="button2" value="提交">
+                        &nbsp;<input type="Reset" class="bt2" name="button1" value="重填" onClick="clear()">
+                        &nbsp;<input type="Button" class="bt2" name="button3" value="返回" onClick="javascript:window.location.href='home.html'">
+                    </td>
+                 </tr>
+        </table>
+        }
+    </div>
+</div>
+}

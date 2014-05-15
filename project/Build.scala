@@ -18,6 +18,8 @@ object ApplicationBuild extends Build {
         cache,
         javaJpa,
 
+        "com.alibaba" % "fastjson" % "1.1.36",
+
         "org.springframework" % "spring-expression" % "3.2.3.RELEASE",
         "org.apache.shiro" % "shiro-spring" % "1.2.3",
 
